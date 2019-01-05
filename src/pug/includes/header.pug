@@ -1,4 +1,13 @@
+
 +b('header').header#header
+    +b.mobile-menu
+        +e.list
+            +e('a')(href="#").link Lorem ipsum dolor.
+            +e('a')(href="#").link Lorem ipsum dolor.
+            +e('a')(href="#").link Lorem ipsum dolor.
+            +e('a')(href="#").link Lorem ipsum dolor.
+            +e('a')(href="#").link Lorem ipsum dolor.
+            +e('a')(href="#").link Lorem ipsum dolor.
     .container
         .row.align-items-center.justify-content-between
             .col-md-2.col-5
@@ -11,3 +20,5 @@
                         +e('a')(href='#').menu-link Контактная информация
             .col-md-2.d-none.d-md-block
                 +e('a').btn Войти
+            +b('div').header-burger.col-2.d-block.d-md-none
+                +e('span').__btn

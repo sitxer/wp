@@ -494,6 +494,42 @@ blockquote {
     text-align: center;
     font-size: 1.5rem; }
 
+.mobile-menu {
+  position: absolute;
+  background: #fff;
+  z-index: 1500;
+  width: 100%;
+  top: 45px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  opacity: 0;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08); }
+  .mobile-menu__list {
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .mobile-menu__item {
+    border-bottom: 1px solid #a3a3a3; }
+  .mobile-menu__link, .mobile-menu__button {
+    padding: 10px 15px;
+    font-weight: 600;
+    display: block; }
+  .mobile-menu_active {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    opacity: 1; }
+
 .footer {
   background-color: #1a1a1a;
   display: -webkit-box;

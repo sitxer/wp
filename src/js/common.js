@@ -43,5 +43,11 @@ $(function () {
 	$('.card__open-card').on('click', function (e) {
 		e.preventDefault();
 		$(this).parents('.card').find('.card__hidden-wrap').slideToggle()
-	})
+	});
+	//Мобильное меню
+	$('.header-burger').on('click', function(e) {
+		e.preventDefault();
+		$(this).toggleClass('header-burger_active');
+		$('.mobile-menu').toggleClass('mobile-menu_active');
+	});
 });
