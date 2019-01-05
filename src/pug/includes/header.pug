@@ -1,0 +1,13 @@
++b('header').header#header
+    .container
+        .row.align-items-center.justify-content-between
+            .col-md-2.col-5
+                +e('a')(href='#').logo Logo
+            .col-md-7.d-none.d-md-block
+                +e('ul').menu
+                    +e('li').menu-item
+                        +e('a')(href='#').menu-link О сервисе
+                    +e('li').menu-item
+                        +e('a')(href='#').menu-link Контактная информация
+            .col-md-2.d-none.d-md-block
+                +e('a').btn Войти

@@ -1,0 +1,443 @@
+@import "variables";
+@import "default";
+@import "buttons";
+@import "inputs";
+@import "selects";
+
+@import "modals";
+
+.header {
+  &__logo {
+    color: white;
+    font-weight: 700;
+    font-size: 1.3125rem;
+    vertical-align: middle;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+    &-blue {
+      background-color: $electric-blue;
+      border-radius: 50%;
+      width: 0.75rem;
+      height: 0.75rem;
+      margin-left: 0.1875rem;
+    }
+    &-orange {
+      margin-left: 0.1875rem;
+      background-color: $mango;
+      border-radius: 50%;
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+    &-white {
+      margin-left: 0.1875rem;
+      background-color: white;
+      border-radius: 50%;
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+  }
+  &__btn {
+    background-color: $electric-blue;
+    border: none;
+    color: white;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  &__nav {
+    display: inline-block;
+  }
+  &__menu {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
+  &__menu-item {
+    display: inline;
+    margin-right: 2.0625rem;
+  }
+  &__menu-link {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9375rem;
+    text-decoration: none;
+    font-weight: 500;
+    &:hover {
+      color: white;
+      font-size: 0.9375rem;
+      text-decoration: none;
+    }
+  }
+  &-burger {
+    width: 3.125rem;
+    height: 3.125rem;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    &__btn, &__btn::before, &__btn::after {
+      position: absolute;
+      top: 50%;
+      margin-top: -1px;
+      left: 50%;
+      margin-left: -0.625rem;
+      width: 1.25rem;
+      height: 2px;
+      background-color: $white;
+    }
+    &__btn::before, &__btn::after {
+      content: '';
+      display: block;
+      transition: 0.2s;
+    }
+    &__btn::before {
+      transform: translateY(-0.3125rem);
+    }
+    &__btn::after {
+      transform: translateY(0.3125rem);
+    }
+    &_active {
+      .header-burger__btn {
+        height: 0;
+        &::before {
+          transform: rotate(45deg);
+        }
+        &::after {
+          transform: rotate(-45deg)
+        }
+      }
+    }
+  }
+  &__user {
+    display: flex;
+    &__ico {
+      background-image: url(../img/content/user-ico.png);
+      width: 40px;
+      height: 40px;
+      margin: 0 auto;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      background-size: cover;
+    }
+  }
+  &-promo {
+    margin: 0;
+    position: relative;
+    padding: 3.125rem 0 4.065rem;
+    color: #fff;
+    background-size: cover;
+    background-color: #3f3f3f;
+    background-position: 50%;
+    background-image: url(../img/content/search-bg.png);
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    &__block {
+      position: relative;
+      z-index: 1000;
+    }
+    &__text {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.footer {
+  background-color: $black;
+  display: flex;
+  margin-top: 4.6875rem;
+  &__menu {
+    color: $white;
+    font-size: 0.9375rem;
+    padding: 1.875rem 0;
+    &-list {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &-item {
+      font-weight: 500;
+      list-style: none;
+      margin-right: 1.875rem;
+    }
+  }
+  &__city {
+    padding: 3.4375rem 0;
+    border-top: 1px solid $greyish-brown;
+    &-list {
+      display: flex;
+      flex-direction: column;
+    }
+    &-item {
+      color: $warm-grey;
+      font-size: 0.9375rem;
+    }
+  }
+  &__addition {
+    border-top: 1px solid $greyish-brown;
+    padding: 1.5625rem 0;
+    font-family: $font-arial;
+    &-item {
+      color: $warm-grey;
+      font-size: 0.8125rem;
+    }
+  }
+  &__info {
+    font-size: 0.8125rem;
+    color: $warm-grey;
+    padding: 1.875rem 0 4.375rem;
+    border-top: 1px solid $greyish-brown;
+  }
+  &__social {
+    display: flex;
+    flex-wrap: wrap;
+    &-link {
+      margin-right: 0.9375rem;
+      max-width: 29px;
+    }
+  }
+}
+
+.top-filter {
+  box-shadow: $box-shadow-default;
+  background-color: $white;
+  &__container {
+    display: flex;
+    font-size: 0.9375rem;
+    flex-wrap: wrap;
+    padding-bottom: 1.25rem;
+  }
+  &__label {
+    margin-right: 3rem;
+  }
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  &__label, &__text {
+    margin-top: 1.25rem;
+  }
+  &__item {
+    input {
+      display: none;
+      &:checked {
+        ~ .top-filter__text {
+            color: $black;
+            &::after {
+              position: absolute;
+              content: '';
+              height: 1px;
+              width: 100%;
+              bottom: -1px;
+              left: 0;
+              background-color: $electric-blue;
+            }
+          }
+      }
+    }
+  }
+  &__text {
+    margin-right: 1.875rem;
+    color: $warm-grey;
+    cursor: pointer;
+    position: relative;
+    transition: all .3s;
+    display: block;
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+.content {
+  padding-top: 3.125rem;
+}
+
+.left-filter {
+  background-color: $white;
+  box-shadow: $box-shadow-default;
+  padding: 1.875rem 1.25rem;
+  font-family: $font-arial;
+  font-size: 0.75rem;
+  z-index: 1;
+  &__sort-selection {
+    &-title {
+      margin-top: 0;
+      margin-bottom: .5rem;
+      font-size: inherit;
+    }
+    &-link {
+      border-bottom: 1px solid $black;
+      margin-right: 0.5rem;
+    }
+  }
+  &__box {
+    position: relative;
+    border: 1px solid $border-default-color;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    &-close {
+      cursor:pointer;
+      transition: 0.3s all;
+      &:after, &:before {
+        content:"";
+        height: 8px;
+        width: 10px;
+        border-top: 1px solid $black;
+        position:absolute;
+        top:10px;
+        right:5px;
+        transform:  rotate(-45deg);
+      }
+      &:before {
+        right:10px;
+        transform: rotate(45deg);
+      }
+      &:hover {
+        opacity: 0.3;
+      }
+    }
+    &-title {
+      margin: 0;
+    }
+    &-select-wrap, &-input {
+      margin-top: 0.75rem;
+    }
+    &-input {
+      width: 100%;
+      padding: 0.5rem;
+      border-color: $border-default-color;
+    }
+    &-select {
+      display: flex;
+      width: 100%;
+    }
+    &-half-wrap {
+      display: flex;
+    }
+    &-half {
+      width: 50%;
+    }
+  }
+}
+.cards-wrap {
+  margin-top: -1.875rem;
+}
+.card {
+  margin-top: 1.875rem;
+  border-radius: unset;
+  border: unset;
+  box-shadow: $box-shadow-default;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  &__visible-wrap {
+    display: flex;
+    height: 200px;
+  }
+  &__img-wrap {
+    width: 15rem;
+    flex-shrink: 0;
+    height: 100%;
+  }
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__title {
+    margin: 0;
+    font-weight: normal;
+  }
+  &__price {
+    font-weight: 700;
+  }
+  &__address, &__date {
+    font-size: 0.8rem;
+  }
+  &__date {
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+  }
+  &__map {
+    height: 300px;
+  }
+  &__hidden {
+    &-row {
+      border-top: 1px solid $border-default-color;
+      padding: 1rem;
+    }
+    &-address-block {
+      display: flex;
+      align-items: center;
+      &:before {
+        content: '';
+        height: 24px;
+        width: 24px;
+        display: block;
+        margin-right: 1rem;
+        background-image: url(../img/theme/icons/location.svg);
+      }
+    }
+    &-address {
+      font-size: 1rem;
+      font-weight: normal;
+      margin: 0;
+    }
+  }
+  &__user {
+    display: flex;
+    &-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 1rem;
+    }
+    &-name {
+      font-weight: 700;
+    }
+    &-ads {
+      font-size: 0.8rem;
+    }
+  }
+  &__slide {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+
+@import "media";

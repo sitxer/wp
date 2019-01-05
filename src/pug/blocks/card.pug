@@ -1,0 +1,43 @@
+mixin card(img, title, price, addressDistrict, addressStreet, date, description, userName, userAds)
+    +b('div').card
+        +e('div').visible-wrap
+            +e('a')(href='#').open-card
+                +e('div').img-wrap
+                    +e('img')(src=img).img
+            +e('div').info
+                +e('a')(href='#').open-card
+                    +e('h4').title=title
+                +e('div').price=price
+                +e('div').address
+                    span=addressDistrict + ' '
+                    span.d-md-inline.d-none=addressStreet
+                +e('div').date=date
+        +e('div').hidden-wrap
+            +e('div').hidden-row
+                +e('div').map
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae0ebdd3246b5eb9142b9bb762c5f36d6fa77c79c6979412fedf16e37f049879f&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+            +e('div').hidden-row
+                +e('div').hidden-address-block
+                    +e('h3').hidden-address
+                        span=addressDistrict + ' '
+                        span=addressStreet
+            +e('div').hidden-row
+                +e('div').slider
+                    +e('div').slide-container
+                        +e('div').slide(style='background-image:url(../img/content/main-slider/1.jpg)')
+                    +e('div').slide-container
+                        +e('div').slide(style='background-image:url(../img/content/main-slider/2.jpg)')
+                    +e('div').slide-container
+                        +e('div').slide(style='background-image:url(../img/content/main-slider/3.jpg)')
+                    +e('div').slide-container
+                        +e('div').slide(style='background-image:url(../img/content/main-slider/4.jpg)')
+            +e('div').hidden-row
+                +e('p').hidden-discription=description
+            +e('div').hidden-row
+                +e('div').user
+                    +e('div').user-icon
+                        +e('img')(src=img).img
+                    +e('div').user-info
+                        +e('div').user-name=userName
+                        +e('div').user-ads=userAds
+                        

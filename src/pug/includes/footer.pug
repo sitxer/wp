@@ -1,0 +1,40 @@
+- var n = 0;
++b('footer').footer
+    .container
+        +e('nav').menu
+            +e('ul').menu-list
+                +e('li').menu-item
+                    +e('a')(href='#').menu-link lorem
+                +e('li').menu-item
+                    +e('a')(href='#').menu-link lorem
+                +e('li').menu-item
+                    +e('a')(href='#').menu-link lorem
+                +e('li').menu-item
+                    +e('a')(href='#').menu-link lorem
+                +e('li').menu-item
+                    +e('a')(href='#').menu-link lorem
+        +e('div').city
+            .row
+                while n++, n <= 20
+                    .col-lg-2.col-sm-3.col-6
+                        +e('nav').city-list
+                            +e('a')(href='#').city-item lorem
+        +e('div').info
+            .row.align-items-center
+                .col-6.col-lg-3
+                    +e('div').copyright 2018 “Lorem”
+                .col-6.col-lg-3
+                    +e('div').agreement
+                        a(href='#') Пользовательское соглашение
+                .col-6.col-lg-3
+                    +e('div').social
+                        +e('a')(href='#').social-link
+                            img(src="../img/content/youtube.png" alt="youtube")
+                        +e('a')(href='#').social-link
+                            img(src="../img/content/vk.png" alt="vk")
+                        +e('a')(href='#').social-link
+                            img(src="../img/content/fb.png" alt="facebook")
+                        +e('a')(href='#').social-link
+                            img(src="../img/content/ok.png" alt="ok")
+                        +e('a')(href='#').social-link
+                            img(src="../img/content/in.png" alt="instagram")

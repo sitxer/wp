@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $pale-grey;
+  font: 1rem/24px $font-main;
+  color: $text;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: $black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5000;
+}
+
+p {
+  font: inherit;
+}
+
+b, strong {
+  font: inherit;
+  color: inherit;
+  font-weight: bold;
+}
+
+fieldset {
+  border: 0;
+}
+
+a {
+  color: inherit;
+  transition: all .33s;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: darken($white, 50%);
+  }
+}
+
+a, button, input {
+  outline: 0;
+  &:focus {
+    outline: 0;
+  }
+}
+
+input, textarea {
+  border: #666 1px solid;
+  outline: none;
+  &:focus:required:invalid {
+    border-color: red;
+  }
+  &:required:valid {
+    border-color: green;
+  }
+}
+
+textarea {
+  resize: none;
+  outline: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+blockquote {
+  margin: 0;
+}

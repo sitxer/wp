@@ -1,0 +1,73 @@
+extends layouts/site
+include blocks/card
+
+block content
+    +b('section').header-promo
+        .container
+            .row
+                .col-12
+                    +e('div').block
+                        +e('p').text Lorem ipsum dolor sit amet, consectetur adipisicing elit. At commodi, delectus doloremque eos quae qui sunt velit voluptatibus. Aperiam doloremque ex fuga nihil nobis quasi rem, unde? Autem, libero, nesciunt?
+    +b('div').top-filter
+        .container
+            +e('div').container
+                +e('label').label Сортировать по:
+                +e('nav').list
+                    +e('label').item
+                        input(type="checkbox" value="1")
+                        +e('span').text Опция 1
+                    +e('label').item
+                        input(type="checkbox" value="2")
+                        +e('span').text Опция 2
+                    +e('label').item
+                        input(type="checkbox" value="3")
+                        +e('span').text Опция 3
+                    +e('label').item
+                        input(type="checkbox" value="4")
+                        +e('span').text Опция 4
+                    +e('label').item
+                        input(type="checkbox" value="4")
+                        +e('span').text Опция 5
+                    +e('label').item
+                        input(type="checkbox" value="4")
+                        +e('span').text Опция 6
+                    +e('label').item
+                        input(type="checkbox" value="4")
+                        +e('span').text Опция 7
+    section.content
+        .container
+            .row
+                .col-xl-3.col-lg-4
+                    +b('div').left-filter#lfilter
+                        +e('div').sort-selection
+                            +e('h3').sort-selection-title Отфильтровать по:
+                            each val, index in ['фильтр 1', 'фильтр 2', 'фильтр 3', 'фильтр 5', 'фильтр 4', 'фильтр 6']
+                                +e('a').sort-selection-link(href='#')=val
+                        +e('div').box
+                            +e('span').box-close
+                            +e('h4').box-title С инпутом
+                            +e('input')(type='text' placeholder='Введите текст').box-input
+                        +e('div').box
+                            +e('span').box-close
+                            +e('h4').box-title С dropdown
+                            +e('div').box-select-wrap
+                                +e('select')(name='select').box-select
+                                    option option 1
+                                    option option 2
+                                    option option 3
+                                    option option 4
+                        +e('div').box
+                            +e('span').box-close
+                            +e('h4').box-title Общий
+                            +e('div').box-half-wrap
+                                +e('div').box-half
+                                    +e('div').box-select-wrap
+                                        +e('select')(name='select').box-select
+                                            option меньше
+                                            option больше
+                                +e('div').box-half
+                                    +e('input')(type='text' placeholder='').box-input
+                .col-xl-9.col-lg-8
+                    .cards-wrap
+                        each val in [{ img: 'https://via.placeholder.com/777x666.jpg', title: '1-к квартира, 39 м², 7/10 эт.', price: '1 200 руб. за сутки', addressDistrict: 'Октябрьский р-н', addressStreet: 'Астраханская 179', date: 'Вчера, 23:45', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad architecto at consequatur eius eveniet incidunt iste itaque iure labore omnis quas quia, sunt, totam velit vero voluptate. Ab corporis deserunt, est illum impedit incidunt tenetur vitae. A dolorem dolorum eum illo, laboriosam neque nesciunt nihil officia, repellat tempora velit?', userName: 'марина', userAds: '8 объявлений'},{ img: 'https://via.placeholder.com/1300x800.jpg', title: 'Заголовок карточки', price: '2800', addressDistrict: 'Адрес карточки', addressStreet: 'Улица карточки', date: 'Вчера, 23:45', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consectetur culpa cum eaque et eveniet harum id in itaque iusto laborum laudantium magnam modi mollitia nisi, odio saepe tenetur vel.', userName: 'светлана', userAds: '10 объявлений'}]
+                            +card(val.img, val.title, val.price, val.addressDistrict, val.addressStreet, val.date, val.description, val.userName, val.userAds)
